@@ -107,6 +107,31 @@ namespace Modul3HW1
             }
         }
 
+        public void Insert(int index, T item)
+        {
+            try
+            {
+                var value = new T[_capacity];
+                for (var i = 0; i < index; i++)
+                {
+                    value[i] = _value[i];
+                }
+
+                value[index] = item;
+
+                for (var i = index + 1; i < _capacity; i++)
+                {
+                    value[i] = _value[i];
+                }
+
+                _value = value;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"{ex.Message}");
+            }
+        }
+
         private T[] ChangeList()
         {
             var value = new T[_capacity];

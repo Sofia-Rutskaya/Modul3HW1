@@ -16,9 +16,10 @@ namespace Modul3HW1
 
             list.RemoveAt(2);
 
-            // list.RemoveAt(19);
-            list.Sort();
             list[0] = 2;
+            list.Insert(2, 15000);
+
+            list.Sort();
 
             foreach (var item in list)
             {
